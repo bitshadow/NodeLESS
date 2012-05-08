@@ -1,4 +1,4 @@
-var less = require('less'),
+var less = require('less'),  //path to less lib "../less.js/lib/less"
     path = require('path'),
     join = path.join,
     fs = require('fs');
