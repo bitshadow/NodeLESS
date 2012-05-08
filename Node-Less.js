@@ -33,7 +33,7 @@ main = function () {
   if(arglen == 3 )
     generate(process.argv[2]);
   else
-    console.log("required number of arguments 3 provided " + argslen );
+    console.log("required number of arguments 3 provided " + arglen );
 }
 
 main();
