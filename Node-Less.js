@@ -1,10 +1,9 @@
-var less = require('less'),  //path to less lib "../less.js/lib/less"
+(function (fname) {
+  var less = require('../less.js/lib/less'),  //path to less lib "../less.js/lib/less"
     path = require('path'),
     join = path.join,
     fs = require('fs');
 
-
-generate = function(fname) {
   var path, lessparser, contents;
 
   path = join(__dirname, fname);
@@ -27,13 +26,4 @@ generate = function(fname) {
     fs.writeFileSync(join(__dirname,cssfname), tree.toCSS());
     console.log(cssfname +"\n~~~~~~~~~\n" + tree.toCSS())
   });
-}
-main = function () {
-  var arglen = process.argv.length;
-  if(arglen == 3 )
-    generate(process.argv[2]);
-  else
-    console.log("required number of arguments 3 provided " + arglen );
-}
-
-main();
+})(process.argv[2]);
